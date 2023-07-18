@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/0badf2e8d3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -32,7 +33,7 @@
         </a>
         <form class="d-flex custom-search" role="search">
           <input class="form-control form-control-sm me-2 search-input" type="search" placeholder="Search" aria-label="Search"
-            style="color: #dbdbdb;">
+            style="background-color: #dbdbdb;">
         </form>
         <img src="images/shopping-cart.png" alt="Cart" width="30" height="25" style="margin-left: 10px;">
       </div>
@@ -76,13 +77,13 @@
             <a class="nav-link"href="#" data-bs-toggle="modal" data-bs-target="#newAddressModal">All Categories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Men's Fashion</a>
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#paymentModal">Men's Fashion</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Women's Fashion</a>
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#addReviewModal">Women's Fashion</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Kid's Fashion</a>
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#editReviewModal">Kid's Fashion</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Gaming</a>
@@ -112,8 +113,14 @@
 <div w3-include-html="sign-up-modal.html"></div>
 <!-- Login Modal below-->
 <div w3-include-html="login-modal.html"></div>
-<!-- New Address below-->
+<!-- New Address Modal below-->
 <div w3-include-html="new-address-modal.html"></div>
+<!-- Payment Modal below-->
+<div w3-include-html="payment-modal.html"></div>
+<!-- Add Review Modal below-->
+<div w3-include-html="add-review-modal.html"></div>
+<!-- Edit Review Modal below-->
+<div w3-include-html="edit-review-modal.html"></div>
 
 
 </body>

@@ -1,0 +1,117 @@
+<div class="modal fade" id="addReviewModal" tabindex="-1" aria-labelledby="addReviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg custom-add-review-mod">
+        <div class="modal-content">
+            <div class="modal-header add-review-header">
+                <h1 class="modal-title-add-review fs-5" id="addReviewModalLabel">Add a Review</h1>
+            </div>
+            <div class="modal-body add-review-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="Username" class="col-form-label">Username</label>
+                        <input type="text" class="form-control add-review-form-control" id="addReviewUsername">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Review" class="col-form-label">Review</label>
+                        <textarea class="form-control add-review-form-control" id="addReview" rows="5"></textarea>
+                    </div>
+                    
+                        <label for="popcorn" class="col-form-label rating-label">Rating:</label>
+                        <img src="images/bw-star.png"  class="pop" value="1" onmouseover="rateIt(this)" />
+                        <img src="images/bw-star.png"  class="pop" value="2" onmouseover="rateIt(this)" />
+                        <img src="images/bw-star.png"  class="pop" value="3" onmouseover="rateIt(this)" />
+                        <img src="images/bw-star.png"  class="pop" value="4" onmouseover="rateIt(this)" />
+                        <img src="images/bw-star.png"  class="pop" value="5" onmouseover="rateIt(this)" />
+                    
+                   
+                    <div class="footer-add-review">
+                        <button type="button" class="btn submit-button">Add</button>
+                        <button type="button" class="btn cancel-button" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                        
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Use Alt + W to wrap any components with another component-->
+
+<!--Styles for add review modal-->
+
+<style>
+    .custom-add-review-mod {
+        top: 5%;
+        /*Moving the modal 5% away from the top */
+    }
+
+    .add-review-header{
+        background-color: #30d5c8;
+    }
+
+    .modal-header .modal-title-add-review {
+        font-weight: bold;
+        color: white;
+        margin-top: 5px;
+    }
+
+    .col-form-label {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .rating-label{
+        margin-right: 10px;
+    }
+
+    .form-control{
+        background-color: #f2f4f3;
+        border: none;
+    }
+
+    .add-review-form-control {
+        border: 1px solid black !important;
+    }
+
+    .footer-add-review{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .cancel-button {
+        background-color: rgba(48, 213, 200, 0.2); /* #30d5c8 converted to decimal value is 48r, 213g, 200b and last is opacity */
+        color: #30d5c8;
+        font-size: 12px;
+        border-color: #30d5c8;
+        border-radius: 5;
+        width: 80px;
+        margin-right: 20px; /* 20px of space between cancel button and submit button */
+    }
+
+    .cancel-button:hover {
+        background-color: rgba(48, 213, 200, 0.2); /* #30d5c8 converted to decimal value is 48r, 213g, 200b and last is opacity */
+        color: black;
+        font-size: 12px;
+        font-weight: bold;
+        border-color: #30d5c8;
+        border-radius: 5;
+    }
+
+    .submit-button {
+        background-color: #30d5c8;
+        color: white; /* text color */
+        font-size: 12px;
+        border-radius: 5;
+        width: 100px;
+        height: 40px;
+    }
+
+    .submit-button:hover {
+        background-color: #30d5c8;
+        color: black;
+        /* text color */
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+</style>
