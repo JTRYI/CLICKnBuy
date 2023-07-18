@@ -1,0 +1,65 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f4f3 !important;
+}
+
+/* CSS for Search bar */
+.custom-search .search-input {
+    width: 1000px; /* Initial width of the search bar */
+  }
+
+  @media (max-width: 770px) {
+    /* Adjust the search bar width for smaller screens */
+    .custom-search input[type="search"] {
+      width: 90%; /* Set the desired width for smaller screens */
+    }
+  }
+  
+.carousel{
+    top: 20px; /*Give 20px of space between carousel and header*/
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+/* Set container size to fit image in carousel*/
+.carousel .carousel-inner{
+    width: 1200px;
+    height: 300px;
+}
+
+/* object-fit cover to fit whole image in container created above */
+.carousel .carousel-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CSS for Categories navbar */
+
+.categories-navbar{
+    margin-top: 70px; /* Gives 70px of spacing between carousell and categories navbar */
+    display: flex;
+    justify-content: center;
+}
+.categories-navbar .navbar .container-fluid{
+    width: 1200px;
+}
+
+.navbar-collapse {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-nav .nav-item {
+    padding: 0px 8px; /*Give 8px of spacing between the left and right for each nav items */
+}
+
+.navbar-nav .nav-item a{
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+}
+

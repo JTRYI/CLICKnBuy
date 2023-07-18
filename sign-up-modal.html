@@ -1,0 +1,92 @@
+<div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+    <div class="modal-dialog custom-sign-up-mod">
+      <div class="modal-content">
+        <div class="modal-header">
+            <div class="custom-header">
+                <img src="images/LogoPic.png" width="60" height="40">
+              <h1 class="modal-title fs-5" id="signUpModalLabel">Join CLICKnBuy Today</h1>
+            </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="Email" class="col-form-label">Email</label>
+              <input type="text" class="form-control" id="signUpEmail">
+            </div>
+            <div class="mb-3">
+              <label for="Username" class="col-form-label">Username</label>
+              <input type="text" class="form-control" id="signUpUsername">
+            </div>
+            <div class="mb-3">
+                <label for="Password" class="col-form-label">Password</label>
+                <input type="text" class="form-control" id="signUpPassword">
+              </div>
+             <div class="mb-3">
+                <button type="button" class="btn sign-up-button">Sign Up</button>
+            </div>
+            <div class="mb-3">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" class="already-user-text">Already a CLICKnBuy User? Login</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Use Alt + W to wrap any components with another component-->
+
+<!--Styles for sign up modal-->
+
+<style>
+
+    .custom-sign-up-mod{
+        top: 5%;
+        /*Moving the modal 5% away from the top */
+    }
+
+    .custom-header{
+        display: flex;
+        align-items: center;
+        margin-left: 100px;
+    }
+
+    .modal-title{
+        font-weight: bold;
+    }
+
+    .col-form-label{
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .form-control{
+        background-color: #f2f4f3;
+        border: none;
+    }
+
+    .sign-up-button{
+        background-color: #30d5c8;
+        color: white; /* text color */
+        font-size: 12px;
+        font-weight: bold;
+        width: 100%;
+        margin-top: 20px; /* 20px of space between button and password text field */
+    }
+
+    .sign-up-button:hover{
+        background-color: #30d5c8;
+        color: black; /* text color */
+        font-size: 12px;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    .already-user-text{
+        text-decoration: none;
+        color: #30d5c8;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+</style>
