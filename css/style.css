@@ -1,6 +1,13 @@
 body{
     font-family: 'Roboto', sans-serif;
     background-color: #f2f4f3 !important;
+    overflow-x: hidden;
+}
+
+.header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 /* CSS for Search bar */
@@ -271,3 +278,40 @@ body{
     padding-right: 32%;
  }
 
+
+ /* CSS for Products Section */
+
+ #productsTable {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    overflow-x: hidden;
+ }
+
+.card-product{
+    max-width: 325px;
+    height: 50vh;
+    margin: 15px 20px; /* margin of 15px to the top and bottom and 20px to the left and right of the card*/
+    background-color: #f2f4f3;
+    border: none;
+}
+
+.card-img-top{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    
+}
+
+.ratings-section{
+    padding-top: 20px; /*Give space between Rating section and Title of product */
+    padding-bottom: 5px; /*Space between Ratings and price of product */
+}
+
+.avg-rating{
+    color: #30d5c8;
+}
+
+.custom-front-star{
+    color: #30d5c8;
+}
