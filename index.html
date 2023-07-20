@@ -21,24 +21,46 @@
     <nav class="navbar" style="background-image: linear-gradient(to right, #4e4e4c , #000000);">
       <div class="container-fluid d-flex justify-content-end">
         <div class="d-flex align-items-center">
-        <h2><a href="#" style="color: white; font-size: 12px; font-weight: bold; text-decoration: none; margin-right: 10px;" data-bs-toggle="modal" data-bs-target="#signUpModal">Sign Up</a></h2>
-        <span class="vertical-line" style="border-left: 1px solid white; height: 12px; margin-right: 10px; transform: translateY(4px);"></span>
-        <h2><a href="#" style="color: white; font-size: 12px; font-weight: bold; text-decoration: none; margin-right: 185px;" data-bs-toggle="modal" data-bs-target="#loginModal" >Login</a></h2>
-      </div>
+          <h2><a href="#"
+              style="color: white; font-size: 12px; font-weight: bold; text-decoration: none; margin-right: 10px;"
+              data-bs-toggle="modal" data-bs-target="#signUpModal">Sign Up</a></h2>
+          <span class="vertical-line"
+            style="border-left: 1px solid white; height: 12px; margin-right: 10px; transform: translateY(4px);"></span>
+          <h2><a href="#"
+              style="color: white; font-size: 12px; font-weight: bold; text-decoration: none; margin-right: 185px;"
+              data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></h2>
+
+
+        </div>
       </div>
       <div class="container-fluid d-flex align-items-start justify-content-start">
         <a class="navbar-brand ms-2" href="#" style="color: white; font-size: 25px; transform: translateY(-10px);">
-          <img src="images/LogoPic.png" alt="Logo" width="60" height="40" class="d-inline-block align-text-middle" style="margin-left: 120px;">
+          <img src="images/LogoPic.png" alt="Logo" width="60" height="40" class="d-inline-block align-text-middle"
+            style="margin-left: 120px;">
           CLICKnBuy
         </a>
         <form class="d-flex custom-search" role="search">
-          <input class="form-control form-control-sm me-2 search-input" type="search" placeholder="Search" aria-label="Search"
-            style="background-color: #dbdbdb;">
+          <input class="form-control form-control-sm me-2 search-input" type="search" placeholder="Search"
+            aria-label="Search" style="background-color: #dbdbdb;">
         </form>
-        <img src="images/shopping-cart.png" alt="Cart" width="30" height="25" style="margin-left: 10px;">
+
+        <div class="dropdown profile-dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Profile
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">My Account</a></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </div>
+        <a href="shopping-cart.html"><img src="images/shopping-cart.png" alt="Cart" width="30" height="25"
+            style="margin-left: 10px;"></a>
+
       </div>
 
     </nav>
+
   </div>
 
   <div class="carousel">
@@ -54,11 +76,13 @@
           <img src="images/clothes.jpeg" class="d-block" alt="...">
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+        data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+        data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -66,73 +90,75 @@
   </div>
 
   <div class="categories-navbar">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link"href="#" data-bs-toggle="modal" data-bs-target="#newAddressModal">All Categories</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#paymentModal">Men's Fashion</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#addReviewModal">Women's Fashion</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#editReviewModal">Kid's Fashion</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Gaming</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Watches</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Men's Shoes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Women's Shoes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Mobile & Gadgets</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Travel</a>
-          </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#newAddressModal">All Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#paymentModal">Men's Fashion</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#addReviewModal">Women's Fashion</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#editReviewModal">Kid's Fashion</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="product.html">Gaming</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Watches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Men's Shoes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Women's Shoes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mobile & Gadgets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Travel</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-</div>
+    </nav>
+  </div>
 
-<!-- Sign Up Modal below-->
-<div w3-include-html="sign-up-modal.html"></div>
-<!-- Login Modal below-->
-<div w3-include-html="login-modal.html"></div>
-<!-- New Address Modal below-->
-<div w3-include-html="new-address-modal.html"></div>
-<!-- Payment Modal below-->
-<div w3-include-html="payment-modal.html"></div>
-<!-- Add Review Modal below-->
-<div w3-include-html="add-review-modal.html"></div>
-<!-- Edit Review Modal below-->
-<div w3-include-html="edit-review-modal.html"></div>
+  <!-- Sign Up Modal below-->
+  <div w3-include-html="sign-up-modal.html"></div>
+  <!-- Login Modal below-->
+  <div w3-include-html="login-modal.html"></div>
+  <!-- New Address Modal below-->
+  <div w3-include-html="new-address-modal.html"></div>
+  <!-- Payment Modal below-->
+  <div w3-include-html="payment-modal.html"></div>
+  <!-- Add Review Modal below-->
+  <div w3-include-html="add-review-modal.html"></div>
+  <!-- Edit Review Modal below-->
+  <div w3-include-html="edit-review-modal.html"></div>
 
 
 </body>
 
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 <script>
-    //to bring in other HTML on the fly into this page
-    w3.includeHTML();
+  //to bring in other HTML on the fly into this page
+  w3.includeHTML();
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+  integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 

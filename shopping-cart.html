@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLICKnBuy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@100;200;300;400;600;700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/0badf2e8d3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="header">
+        <nav class="navbar" style="background-image: linear-gradient(to right, #4e4e4c , #000000);">
+            <div class="container-fluid d-flex justify-content-end">
+                <div class="d-flex align-items-center">
+                   <br>
+                   <br>
+                </div>
+            </div>
+            <div class="container-fluid d-flex align-items-start justify-content-start">
+                <a class="navbar-brand ms-2" href="index.html"
+                    style="color: white; font-size: 25px; transform: translateY(-10px);">
+                    <img src="images/LogoPic.png" alt="Logo" width="60" height="40"
+                        class="d-inline-block align-text-middle" style="margin-left: 120px;">
+                    CLICKnBuy
+                </a>
+                <span class="vertical-line"
+            style="border-left: 1px solid #30d5c8; height: 40px; transform: translateY(-4px); margin-right: 20px;"></span>
+            <p class="shopping-cart-title" style="color: #30d5c8; font-size: 25px; transform: translateY(-4px); margin-right: 55%;" >Shopping Cart</p>
+                <div class="dropdown profile-dropdown-cart">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Profile
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">My Account</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+
+    <div class="cart-titles">
+        <div class="cart-titles-container">
+            
+            <div class="cart-titles-together">
+                <h5>Unit Price</h5>
+                <h5>Quantity</h5>
+                <h5>Total Price</h5>
+                <h5>Actions</h5>
+            </div>
+            <h5 class="cart-title-product">Product</h5>
+        </div>
+    </div>
+
+
+    <!-- Sign Up Modal below-->
+    <div w3-include-html="sign-up-modal.html"></div>
+    <!-- Login Modal below-->
+    <div w3-include-html="login-modal.html"></div>
+    <!-- New Address Modal below-->
+    <div w3-include-html="new-address-modal.html"></div>
+    <!-- Payment Modal below-->
+    <div w3-include-html="payment-modal.html"></div>
+    <!-- Add Review Modal below-->
+    <div w3-include-html="add-review-modal.html"></div>
+    <!-- Edit Review Modal below-->
+    <div w3-include-html="edit-review-modal.html"></div>
+
+
+</body>
+
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<script>
+    //to bring in other HTML on the fly into this page
+    w3.includeHTML();
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</html>
