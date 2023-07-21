@@ -25,6 +25,11 @@ body {
     }
 }
 
+#profileMenu{
+
+    visibility: hidden;
+}
+
 .carousel {
     top: 20px;
     /*Give 20px of space between carousel and header*/
