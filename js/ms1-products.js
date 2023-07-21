@@ -2,7 +2,7 @@
 function getProducts() {
     var request = new XMLHttpRequest();
 
-    request.open('GET', 'https://wpm1w6eh5j.execute-api.us-east-1.amazonaws.com//products', true);
+    request.open('GET', 'https://wpm1w6eh5j.execute-api.us-east-1.amazonaws.com/products', true);
 
     //This function will be called when data returns from the web api    
     request.onload = function () {
@@ -10,7 +10,7 @@ function getProducts() {
         products_array = JSON.parse(request.responseText);
         sessionStorage.setItem("products", JSON.stringify(products_array));
         console.log(products_array) // output to console
-        displayProducts(category);    
+        displayProducts(category);
 
     };
 
@@ -35,11 +35,11 @@ function displayProducts(category) {
                 avgRating = "NA (No Reviews Yet)"
             }
             var cell = '<div class="card card-product" style = "max-width: 325px;">\
-            <img src="'+ thumbnail +'" class="card-img-top" alt="...">\
-            <div class="card-body">\
-              <h5 class="card-title">'+ title +'</h5>\
+            <img src="'+ thumbnail + '" class="card-img-top" alt="...">\
+            <div class="card-body" style="cursor:pointer" item="' + count + '" onClick="showProductDetails(this)" >\
+              <h5 class="card-title">'+ title + '</h5>\
               <div class = "ratings-section"><label class = "view-ratings">Rating:</label> <span class = "avg-rating">'+ avgRating + ' </span> <i class="fa-solid fa-star custom-front-star"></i> </div>\
-              <p class="card-text" style = "color: #30d5c8">$'+ price +'</p>\
+              <p class="card-text" style = "color: #30d5c8">$'+ price + '</p>\
             </div>\
           </div>'
             table.insertAdjacentHTML('beforeend', cell);
@@ -54,12 +54,12 @@ function displayProducts(category) {
                 if (avgRating == 0) {
                     avgRating = "NA (No Reviews Yet)"
                 }
-                var cell = '<div class="card card-product" style = "max-width: 325px;" >\
-                <img src="'+ thumbnail +'" class="card-img-top" alt="...">\
-                <div class="card-body">\
-                  <h5 class="card-title">'+ title +'</h5>\
+                var cell = '<div class="card card-product" style = "max-width: 325px;">\
+                <img src="'+ thumbnail + '" class="card-img-top" alt="...">\
+                <div class="card-body" style="cursor:pointer" item="' + count + '" onClick="showProductDetails(this)">\
+                  <h5 class="card-title">'+ title + '</h5>\
                   <div class = "ratings-section"><label class = "view-ratings">Rating:</label> <span class = "avg-rating">'+ avgRating + ' </span> <i class="fa-solid fa-star custom-front-star"></i> </div>\
-                  <p class="card-text" style = "color: #30d5c8">$'+ price +'</p>\
+                  <p class="card-text" style = "color: #30d5c8">$'+ price + '</p>\
                 </div>\
               </div>'
                 table.insertAdjacentHTML('beforeend', cell);
@@ -89,12 +89,13 @@ document.getElementById("searchInput").addEventListener("input", function (event
             if (avgRating == 0) {
                 avgRating = "NA (No Reviews Yet)"
             }
+
             var cell = '<div class="card card-product" style = "max-width: 325px;">\
-            <img src="'+ thumbnail +'" class="card-img-top" alt="...">\
-            <div class="card-body">\
-              <h5 class="card-title">'+ title +'</h5>\
+            <img src="'+ thumbnail + '" class="card-img-top" alt="...">\
+            <div class="card-body" style="cursor:pointer" item="' + count + '" onClick="showProductDetails(this)">\
+              <h5 class="card-title">'+ title + '</h5>\
               <div class = "ratings-section"><label class = "view-ratings">Rating:</label> <span class = "avg-rating">'+ avgRating + ' </span> <i class="fa-solid fa-star custom-front-star"></i> </div>\
-              <p class="card-text" style = "color: #30d5c8">$'+ price +'</p>\
+              <p class="card-text" style = "color: #30d5c8">$'+ price + '</p>\
             </div>\
           </div>'
             table.insertAdjacentHTML('beforeend', cell);
@@ -165,4 +166,25 @@ function listTravelProducts() {
     category = "Travel";
     displayProducts(category);
 
+}
+
+function goToPageWithProductID(id) {
+    // Construct the URL with the query parameter "id"
+    const url = 'product.html?id=' + encodeURIComponent(id);
+  
+    // Navigate to the target page
+    window.location.href = url;
+  }
+
+
+function showProductDetails(element){
+    var item = element.getAttribute('item');
+    currentIndex = item;
+    console.log("Product details:", products_array[item])
+
+    // Use the item index to get the product ID
+    var productID = products_array[item]._id;
+
+    // Pass the product ID to the goToPageWithProductID function
+    goToPageWithProductID(productID);
 }

@@ -14,6 +14,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/0badf2e8d3.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -54,21 +55,21 @@
   <div class="product-details">
     <div class="product-container">
       <div class="product-img-box">
-        <img src="images/clothes.jpeg" id="productImg">
+        <img id="productImg">
       </div>
       <div class="product-informations">
-        <h1 class="product-title">Wireless Gaming Mouse</h1>
-        <h5 class="product-rating-title">Rating:</h5>
-        <h1 class="product-price">$79.99</h1>
+        <h1 class="product-title" id="productTitle"></h1>
+        <div class="rating-row">
+          <h5 class="product-rating-title">Rating:</h5>
+          <span class = "avg-rating-product" id="productRating"></span> 
+          <i class="fa-solid fa-star custom-front-star-product"></i>
+        </div>
+        <h1 class="product-price" id="productPrice"></h1>
         <h5 class="product-description-title">Product Description:</h5>
-        <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-          officia deserunt mollit anim id est laborum</p>
+        <p class="product-description" id="productDescription"></p>
        <div class="quantity-row">
           <h5 class="product-quantity-title">Quantity</h5>
-          <p class="quantity-amt">50 Available</p>
+          <p class="quantity-amt" id="productQuantity"></p>
        </div>
         <br>
         <button type="button" class="btn add-to-cart-button">
@@ -100,6 +101,65 @@
 <!-- Edit Review Modal below-->
 <div w3-include-html="edit-review-modal.html"></div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="js/app.js"></script>
+
+
+<script>
+
+  
+  // Function to get the value of a query parameter by name
+  function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+  // Function to find the product details in the products_array based on the product ID
+  function findProductByID(productID) {
+    // Find the product in the products_array with the matching ID
+    const product = products_array.find((item) => item._id === parseInt(productID));
+    console.log('Product is:', product);
+    return product;
+    
+  }
+
+  // Function to display the product details on the page
+  function displayProductDetails(product) {
+    if (product) {
+      // Update the product details on the page with the product data
+      document.getElementById('productImg').src = product.product_img;
+      document.getElementById('productTitle').textContent = product.product_title;
+      document.getElementById('productRating').textContent = product.avgRating;
+      document.getElementById('productPrice').textContent = '$' + product.product_price;
+      document.getElementById('productDescription').textContent = product.product_description;
+      document.getElementById('productQuantity').textContent = product.product_quantity + ' ' + 'Available';
+    } else {
+      console.error('Product not found');
+    }
+  }
+
+
+  $(document).ready(function() {
+
+    //get products_array from session storage
+    products_array = JSON.parse(sessionStorage.getItem('products'));
+    console.log(products_array);
+
+    // Get the "id" query parameter value from the URL
+    const productID = getQueryParam('id');
+
+    // Now you have the productID from the query parameter
+    console.log('Product ID from query parameter:', productID);
+    // You can use the productID as needed, e.g., fetch product details based on this ID
+    
+      // Call the functions to find the product and display its details
+    const product = findProductByID(productID);
+    displayProductDetails(product);
+    
+  })
+</script>
+
 </body>
 
 <script src="https://www.w3schools.com/lib/w3.js"></script>
@@ -108,7 +168,6 @@
     w3.includeHTML();
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
