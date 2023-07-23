@@ -138,10 +138,13 @@ body {
     font-size: 12px;
     font-weight: bold;
     padding-right: 5px;
+    transform: translateY(-1px);
 }
 
 .custom-front-star-product {
+    font-size: 14px;
     color: #30d5c8;
+    transform: translateY(-1px);
 
 }
 
@@ -240,16 +243,53 @@ body {
 
 .product-reviews-container {
     width: 1200px;
-    height: 400px;
+    height: auto;
     background-color: white;
     border-radius: 10px;
+}
+
+.reviews-header{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 50px;
 }
 
 .product-reviews-title {
     font-size: 25px;
     font-weight: bold;
-    margin-top: 20px;
-    margin-left: 50px;
+}
+
+.reviews-plus{
+    padding-left: 20px;
+    margin-bottom: 4px;
+    color: #30d5c8;
+}
+
+.review-body {
+    width: 95%;
+    height: auto;
+    margin-left: 32px;
+    margin-top: 10px;
+
+}
+
+.review-card{
+    padding-bottom: 20px;
+}
+
+.rating-star{
+    padding: 10px 5px;
+}
+
+.custom-edit{
+    padding-left: 8px;
+    padding-right: 10px;
+    transform: translateY(2px);
+}
+
+.custom-bin {
+    transform: translateY(2px);
 }
 
 /*CSS for profile dropdown */

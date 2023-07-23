@@ -17,36 +17,45 @@
 
 </head>
 
-<body>
+<body onload="getReviews()">
   <div class="header">
     <nav class="navbar" style="background-image: linear-gradient(to right, #4e4e4c , #000000);">
       <div class="container-fluid d-flex justify-content-end">
         <div class="d-flex align-items-center">
-        <h2><a href="#" style="color: white; font-size: 12px; font-weight: bold; text-decoration: none; margin-right: 10px;" data-bs-toggle="modal" data-bs-target="#signUpModal" id="signUpMenu">Sign Up</a></h2>
-        <span class="vertical-line" style="border-left: 1px solid white; height: 12px; margin-right: 10px; transform: translateY(4px);" id="verticalLineMenu"></span>
-        <h2><a href="#" style="color: white; font-size: 12px; font-weight: bold; text-decoration: none; margin-right: 185px;" data-bs-toggle="modal" data-bs-target="#loginModal" id="loginMenu">Login</a></h2>
-      </div>
+          <h2><a href="#"
+              style="color: white; font-size: 12px; font-weight: bold; text-decoration: none; margin-right: 10px;"
+              data-bs-toggle="modal" data-bs-target="#signUpModal" id="signUpMenu">Sign Up</a></h2>
+          <span class="vertical-line"
+            style="border-left: 1px solid white; height: 12px; margin-right: 10px; transform: translateY(4px);"
+            id="verticalLineMenu"></span>
+          <h2><a href="#"
+              style="color: white; font-size: 12px; font-weight: bold; text-decoration: none; margin-right: 185px;"
+              data-bs-toggle="modal" data-bs-target="#loginModal" id="loginMenu">Login</a></h2>
+        </div>
       </div>
       <div class="container-fluid d-flex align-items-start justify-content-start">
-        <a class="navbar-brand ms-2" href="index.html" style="color: white; font-size: 25px; transform: translateY(-10px);">
-          <img src="images/LogoPic.png" alt="Logo" width="60" height="40" class="d-inline-block align-text-middle" style="margin-left: 120px;">
+        <a class="navbar-brand ms-2" href="index.html"
+          style="color: white; font-size: 25px; transform: translateY(-10px);">
+          <img src="images/LogoPic.png" alt="Logo" width="60" height="40" class="d-inline-block align-text-middle"
+            style="margin-left: 120px;">
           CLICKnBuy
         </a>
         <form class="d-flex custom-search" role="search">
-          <input class="form-control form-control-sm me-2 search-input" type="search" placeholder="Search" aria-label="Search"
-            style="background-color: #dbdbdb;">
+          <input class="form-control form-control-sm me-2 search-input" type="search" placeholder="Search"
+            aria-label="Search" style="background-color: #dbdbdb;">
         </form>
         <div class="dropdown profile-dropdown" id="profileMenu">
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Profile
+            aria-expanded="false">
+            Profile
           </button>
           <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">My Account</a></li>
-              <li><a class="dropdown-item" href="#" onclick="logoutMe()">Logout</a></li>
+            <li><a class="dropdown-item" href="#">My Account</a></li>
+            <li><a class="dropdown-item" href="#" onclick="logoutMe()">Logout</a></li>
           </ul>
-      </div>
-        <a href="#"><img src="images/shopping-cart.png" alt="Cart" width="30" height="25" style="margin-left: 10px;"></a>
+        </div>
+        <a href="#"><img src="images/shopping-cart.png" alt="Cart" width="30" height="25"
+            style="margin-left: 10px;"></a>
       </div>
 
     </nav>
@@ -61,117 +70,128 @@
         <h1 class="product-title" id="productTitle"></h1>
         <div class="rating-row">
           <h5 class="product-rating-title">Rating:</h5>
-          <span class = "avg-rating-product" id="productRating"></span> 
+          <span class="avg-rating-product" id="productRating"></span>
           <i class="fa-solid fa-star custom-front-star-product"></i>
         </div>
         <h1 class="product-price" id="productPrice"></h1>
         <h5 class="product-description-title">Product Description:</h5>
         <p class="product-description" id="productDescription"></p>
-       <div class="quantity-row">
+        <div class="quantity-row">
           <h5 class="product-quantity-title">Quantity</h5>
           <p class="quantity-amt" id="productQuantity"></p>
-       </div>
+        </div>
         <br>
         <button type="button" class="btn add-to-cart-button">
           <i class="fa-solid fa-cart-plus fa-beat-fade"></i>
           Add To Cart
         </button>
         <button type="button" class="btn buy-now-btn">Buy Now</button>
-        
+
       </div>
     </div>
   </div>
 
   <div class="product-reviews">
     <div class="product-reviews-container">
-      <h1 class="product-reviews-title">Product Reviews</h1>
+      <div class="reviews-header">
+        <h1 class="product-reviews-title">Product Reviews</h1>
+        <i class="fa-solid fa-circle-plus reviews-plus" onclick="newReview()" style="float:left;cursor:pointer"></i>
+      </div>
+      <div class="review-body" id="reviewBody"></div>
     </div>
   </div>
 
+
   <!-- Sign Up Modal below-->
-<div w3-include-html="sign-up-modal.html"></div>
-<!-- Login Modal below-->
-<div w3-include-html="login-modal.html"></div>
-<!-- New Address Modal below-->
-<div w3-include-html="new-address-modal.html"></div>
-<!-- Payment Modal below-->
-<div w3-include-html="payment-modal.html"></div>
-<!-- Add Review Modal below-->
-<div w3-include-html="add-review-modal.html"></div>
-<!-- Edit Review Modal below-->
-<div w3-include-html="edit-review-modal.html"></div>
+  <div w3-include-html="sign-up-modal.html"></div>
+  <!-- Login Modal below-->
+  <div w3-include-html="login-modal.html"></div>
+  <!-- New Address Modal below-->
+  <div w3-include-html="new-address-modal.html"></div>
+  <!-- Payment Modal below-->
+  <div w3-include-html="payment-modal.html"></div>
+  <!-- Add Review Modal below-->
+  <div w3-include-html="add-review-modal.html"></div>
+  <!-- Edit Review Modal below-->
+  <div w3-include-html="edit-review-modal.html"></div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 
-<script src="js/app.js"></script>
-<script src="js/ms2-users.js"></script>
-<script src="js/check-token.js"></script>
-<script src="js/loadingProfile.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/ms2-users.js"></script>
+  <script src="js/ms3-reviews.js"></script>
+  <script src="js/check-token.js"></script>
+  <script src="js/loadingProfile.js"></script>
 
-<script>
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <script>
+    //to bring in other HTML on the fly into this page
+    w3.includeHTML();
+  </script>
 
-  
-  // Function to get the value of a query parameter by name
-  function getQueryParam(name) {
+
+  <script>
+
+    
+    // Function to get the value of a query parameter by name
+    function getQueryParam(name) {
       const urlParams = new URLSearchParams(window.location.search);
       return urlParams.get(name);
     }
 
-  // Function to find the product details in the products_array based on the product ID
-  function findProductByID(productID) {
-    // Find the product in the products_array with the matching ID
-    const product = products_array.find((item) => item._id === parseInt(productID));
-    console.log('Product is:', product);
-    return product;
-    
-  }
+    // Function to find the product details in the products_array based on the product ID
+    function findProductByID(productID) {
+      // Find the product in the products_array with the matching ID
+      const product = products_array.find((item) => item._id === parseInt(productID));
+      console.log('Product is:', product);
+      return product;
 
-  // Function to display the product details on the page
-  function displayProductDetails(product) {
-    if (product) {
-      // Update the product details on the page with the product data
-      document.getElementById('productImg').src = product.product_img;
-      document.getElementById('productTitle').textContent = product.product_title;
-      document.getElementById('productRating').textContent = product.avgRating;
-      document.getElementById('productPrice').textContent = '$' + product.product_price;
-      document.getElementById('productDescription').textContent = product.product_description;
-      document.getElementById('productQuantity').textContent = product.product_quantity + ' ' + 'Available';
-    } else {
-      console.error('Product not found');
     }
-  }
 
+    // Function to display the product details on the page
+    function displayProductDetails(product) {
+      if (product) {
+        // Update the product details on the page with the product data
+        document.getElementById('productImg').src = product.product_img;
+        document.getElementById('productTitle').textContent = product.product_title;
+        document.getElementById('productRating').textContent = product.avgRating;
+        document.getElementById('productPrice').textContent = '$' + product.product_price;
+        document.getElementById('productDescription').textContent = product.product_description;
+        document.getElementById('productQuantity').textContent = product.product_quantity + ' ' + 'Available';
+      } else {
+        console.error('Product not found');
+      }
+    }
 
-  $(document).ready(function() {
+    $(document).ready(function () {
 
-    //get products_array from session storage
-    products_array = JSON.parse(sessionStorage.getItem('products'));
-    console.log(products_array);
+      //get products_array from session storage
+      products_array = JSON.parse(sessionStorage.getItem('products'));
+      console.log(products_array);
 
-    // Get the "id" query parameter value from the URL
-    const productID = getQueryParam('id');
+      // Get the "id" query parameter value from the URL
+      const productID = getQueryParam('id');
 
-    // Now you have the productID from the query parameter
-    console.log('Product ID from query parameter:', productID);
-    // You can use the productID as needed, e.g., fetch product details based on this ID
-    
+      // Now you have the productID from the query parameter
+      console.log('Product ID from query parameter:', productID);
+      // You can use the productID as needed, e.g., fetch product details based on this ID
+
       // Call the functions to find the product and display its details
-    const product = findProductByID(productID);
-    displayProductDetails(product);
-    
-  })
-</script>
+      const product = findProductByID(productID);
+      displayProductDetails(product);
+      
+    })
+  </script>
 
 </body>
 
-<script src="https://www.w3schools.com/lib/w3.js"></script>
-<script>
-    //to bring in other HTML on the fly into this page
-    w3.includeHTML();
-</script>
+
 
 
 </html>

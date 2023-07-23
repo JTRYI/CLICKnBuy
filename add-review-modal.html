@@ -1,3 +1,4 @@
+
 <div class="modal fade" id="addReviewModal" tabindex="-1" aria-labelledby="addReviewModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg custom-add-review-mod">
         <div class="modal-content">
@@ -8,11 +9,11 @@
                 <form>
                     <div class="mb-3">
                         <label for="Username" class="col-form-label">Username</label>
-                        <input type="text" class="form-control add-review-form-control" id="addReviewUsername">
+                        <input type="text" disabled class="form-control add-review-form-control" id="addReviewUsername">
                     </div>
                     <div class="mb-3">
                         <label for="Review" class="col-form-label">Review</label>
-                        <textarea class="form-control add-review-form-control" id="addReview" rows="5"></textarea>
+                        <textarea class="form-control add-review-form-control" id="userReview" rows="5"></textarea>
                     </div>
                     
                         <label for="popcorn" class="col-form-label rating-label">Rating:</label>
@@ -24,7 +25,7 @@
                     
                    
                     <div class="footer-add-review">
-                        <button type="button" class="btn submit-button">Add</button>
+                        <button type="button" class="btn submit-button" onclick="addReview()">Add</button>
                         <button type="button" class="btn cancel-button" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                         
                     </div>

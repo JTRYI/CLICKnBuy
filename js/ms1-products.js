@@ -12,6 +12,7 @@ function getProducts() {
         console.log(products_array) // output to console
         displayProducts(category);
 
+
     };
 
     //This command starts the calling of the products web api    
