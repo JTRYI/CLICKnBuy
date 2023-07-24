@@ -51,11 +51,11 @@
           </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">My Account</a></li>
-            <li><a class="dropdown-item" href="#" onclick="logoutMe()">Logout</a></li>
+            <li><a class="dropdown-item" href="index.html" onclick="logoutMe()">Logout</a></li>
           </ul>
         </div>
-        <a href="#"><img src="images/shopping-cart.png" alt="Cart" width="30" height="25"
-            style="margin-left: 10px;"></a>
+        <img src="images/shopping-cart.png" alt="Cart" width="30" height="25"
+          style="margin-left: 10px; cursor: pointer;" onclick="goToCart()">
       </div>
 
     </nav>
@@ -81,7 +81,7 @@
           <p class="quantity-amt" id="productQuantity"></p>
         </div>
         <br>
-        <button type="button" class="btn add-to-cart-button">
+        <button type="button" class="btn add-to-cart-button" onclick="addToCart()">
           <i class="fa-solid fa-cart-plus fa-beat-fade"></i>
           Add To Cart
         </button>
@@ -126,6 +126,7 @@
   <script src="js/app.js"></script>
   <script src="js/ms2-users.js"></script>
   <script src="js/ms3-reviews.js"></script>
+  <script src="js/ms4-cart.js"></script>
   <script src="js/check-token.js"></script>
   <script src="js/loadingProfile.js"></script>
 
@@ -138,7 +139,7 @@
 
   <script>
 
-    
+
     // Function to get the value of a query parameter by name
     function getQueryParam(name) {
       const urlParams = new URLSearchParams(window.location.search);
@@ -150,8 +151,9 @@
       // Find the product in the products_array with the matching ID
       const product = products_array.find((item) => item._id === parseInt(productID));
       console.log('Product is:', product);
+      sessionStorage.setItem('clickedProduct', JSON.stringify(product));
       return product;
-
+      
     }
 
     // Function to display the product details on the page
@@ -169,6 +171,7 @@
       }
     }
 
+
     $(document).ready(function () {
 
       //get products_array from session storage
@@ -185,7 +188,7 @@
       // Call the functions to find the product and display its details
       const product = findProductByID(productID);
       displayProductDetails(product);
-      
+
     })
   </script>
 

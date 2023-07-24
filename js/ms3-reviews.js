@@ -12,6 +12,7 @@ function getReviews() {
         // Now that reviews are fetched, call the function to display product reviews
         const productID = getQueryParam('id');
         displayProductReviews(productID);
+        getCart();
     }
 
     request.send();
@@ -85,7 +86,6 @@ function newReview() {
 
     else {
         alert("Please login to add reviews!")
-
 
     }
 

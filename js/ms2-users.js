@@ -82,6 +82,16 @@ function logoutMe() {
     document.getElementById("profileMenu").style.visibility = "hidden"
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("profile");
+    sessionStorage.removeItem("cartID");
+    sessionStorage.removeItem("cartTotalPrice");
+    location.reload();
+}
+
+function logoutMeCart() {
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("profile");
+    sessionStorage.removeItem("cartID");
+    sessionStorage.removeItem("cartTotalPrice");
     location.reload();
 }
 

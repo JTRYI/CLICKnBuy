@@ -7,3 +7,5 @@ var review_array = [];
 var starBWImage = 'images/bw-star.png';
 var starImage = 'images/coloured-star.png';
 var rating = 0;
+
+var cart_array = [];
