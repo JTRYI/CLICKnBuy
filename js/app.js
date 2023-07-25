@@ -9,3 +9,5 @@ var starImage = 'images/coloured-star.png';
 var rating = 0;
 
 var cart_array = [];
+
+var checkout_array = [];

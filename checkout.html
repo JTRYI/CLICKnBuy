@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLICKnBuy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@100;200;300;400;600;700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/0badf2e8d3.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="getCheckoutProducts()">
+    <div class="header">
+        <nav class="navbar" style="background-image: linear-gradient(to right, #4e4e4c , #000000);">
+            <div class="container-fluid d-flex justify-content-end">
+                <div class="d-flex align-items-center">
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <div class="container-fluid d-flex align-items-start justify-content-start">
+                <a class="navbar-brand ms-2" href="index.html"
+                    style="color: white; font-size: 25px; transform: translateY(-10px);">
+                    <img src="images/LogoPic.png" alt="Logo" width="60" height="40"
+                        class="d-inline-block align-text-middle" style="margin-left: 120px;">
+                    CLICKnBuy
+                </a>
+                <span class="vertical-line"
+                    style="border-left: 1px solid #30d5c8; height: 40px; transform: translateY(-4px); margin-right: 20px;"></span>
+                <p class="checkout-title"
+                    style="color: #30d5c8; font-size: 25px; transform: translateY(-4px); margin-right: 55%;">Checkout
+                </p>
+                <div class="dropdown profile-dropdown-cart">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Profile
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">My Account</a></li>
+                        <li><a class="dropdown-item" href="index.html" onclick="logoutMeCheckout()">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="address-section">
+        <div class="address-box">
+
+            <div class="address-title-box">
+                <i class="fa-solid fa-location-dot"></i>
+                <h6 class="address-title">Delivery Address</h6>
+            </div>
+
+            <address class="address">
+                <p id="address"></p>
+               
+            </address>
+
+        </div>
+    </div>
+
+    <div class="checkout-titles">
+        <div class="checkout-titles-container">
+            <h6 class="checkout-title-product">Product</h6>
+
+            <div class="checkout-titles-together">
+                <h6>Unit Price</h6>
+                <h6>Amount</h6>
+                <h6>Item Subtotal</h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="checkout-body" id="checkoutBody"></div>
+
+    <div class="checkout-footer-box">
+        <div class="checkout-footer">
+            <h5 class="checkout-total-title">Total:</h5>
+            <h4 class="checkout-total-price" id="checkoutTotalPrice"></h4>
+            <button type="button" class="btn place-order-btn">Place Order</button>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal below-->
+    <div w3-include-html="sign-up-modal.html"></div>
+    <!-- Login Modal below-->
+    <div w3-include-html="login-modal.html"></div>
+    <!-- New Address Modal below-->
+    <div w3-include-html="new-address-modal.html"></div>
+    <!-- Payment Modal below-->
+    <div w3-include-html="payment-modal.html"></div>
+    <!-- Add Review Modal below-->
+    <div w3-include-html="add-review-modal.html"></div>
+    <!-- Edit Review Modal below-->
+    <div w3-include-html="edit-review-modal.html"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/ms2-users.js"></script>
+    <script src="js/ms4-cart.js"></script>
+    <script src="js/ms5-checkout-payment.js"></script>
+    <script src="js/loadingProfile.js"></script>
+    <script src="js/redirect.js"></script>
+
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script>
+        //to bring in other HTML on the fly into this page
+        w3.includeHTML();
+    </script>
+
+</body>
+
+<!-- CSS for checkout.html -->
+<style>
+    .address-section {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .address-box {
+        width: 1200px;
+        height: 100px;
+        background-color: white;
+    }
+
+    .address-title-box {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 30px;
+        padding-top: 10px;
+    }
+
+    .fa-location-dot {
+        padding-right: 10px;
+        transform: translateY(3px);
+        color: #30d5c8;
+    }
+
+    .address-title {
+        color: #30d5c8;
+    }
+
+    .address {
+        
+        padding-left: 30px;
+    }
+
+    .checkout-titles {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .checkout-titles-container {
+        width: 1200px;
+        height: 50px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .checkout-titles-together {
+        display: flex;
+
+    }
+
+    .checkout-title-product {
+        padding-left: 10%
+    }
+
+    .checkout-titles-together h6 {
+        padding: 0px 60px;
+    }
+
+    .checkout-body {
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        
+    }
+
+    .checkout-items-block {
+        width: 1200px;
+        height: 120px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        margin: 0px auto;
+    }
+
+    .checkout-item-img-box {
+        width: 200px;
+        height: 100px;
+        margin-left: 5%;
+    }
+
+    .checkout-item-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .checkout-item-title {
+        max-width: 200px;
+        padding-left: 10px;
+        font-size: 15px;
+        /* Add a min-width to ensure the padding starts from 200px */
+        min-width: 200px;
+        /* Add flex: 1 to allow the title to take up the remaining space if it doesn't reach 200px */
+        flex: 1;
+    }
+
+    .checkout-items-together {
+        display: flex;
+        align-items: center;
+        padding-left: 228px;
+    }
+
+    .checkout-item-price {
+        font-size: 15px;
+        max-width: 50px;
+        /* Add a min-width to ensure the padding starts from 50px */
+        min-width: 50px;
+        /* Add flex: 1 to allow the title to take up the remaining space if it doesn't reach 200px */
+        flex: 1;
+    }
+
+    .checkout-item-quantity {
+        font-size: 15px;
+        max-width: 50px;
+        /* Add a min-width to ensure the padding starts from 50px */
+        min-width: 50px;
+        /* Add flex: 1 to allow the title to take up the remaining space if it doesn't reach 200px */
+        flex: 1;
+        padding-left: 152px;
+    }
+
+    .checkout-total-item-price {
+        font-size: 15px;
+        padding-left: 180px;
+        max-width: 50px;
+        /* Add a min-width to ensure the padding starts from 50px */
+        min-width: 50px;
+        /* Add flex: 1 to allow the title to take up the remaining space if it doesn't reach 200px */
+        flex: 1;
+    }
+
+    .checkout-footer-box{
+    display: flex;
+    justify-content: center;
+}
+
+.checkout-footer{
+    width: 1200px;
+    height: 100px;
+    /* background-color: #ffffff; */
+    display: flex;
+    justify-content: flex-end; /* Move items to the right */
+    align-items: center;
+    padding-top: 35px;
+    
+}
+
+.checkout-total-title{
+    font-size: 15px;
+    padding-right: 10px;
+    transform: translateY(1px);
+}
+
+.checkout-total-price{
+    font-size: 20px;
+    color: #30d5c8;
+    padding-right: 10px;
+}
+
+.btn.place-order-btn {
+    background-color: #30d5c8;
+    color: white;
+    /* text color */
+    font-size: 12px;
+    border-radius: 5px;
+    width: 120px;
+    height: 40px;
+    margin-bottom: 10px;
+    /* Give 10px of space*/
+}
+
+.btn.place-order-btn:hover {
+    background-color: #30d5c8;
+    color: black;
+    /* text color */
+    font-size: 12px;
+    font-weight: bold;
+}
+</style>
+
+</html>

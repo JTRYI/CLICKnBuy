@@ -8,20 +8,7 @@
             <div class="modal-body new-add-body">
                 <p class="description">To place an order, please add a delivery address</p>
                 <form>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="Full Name" class="col-form-label">Full Name</label>
-                                <input type="text" class="form-control" id="fullName">
-                            </div>
-                        </div>
-                        <div class="col-md-6 ms-auto">
-                            <div class="mb-3">
-                                <label for="Phone Number" class="col-form-label">Phone Number</label>
-                                <input type="text" class="form-control" id="phoneNumber">
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="mb-3">
                         <label for="Postal Code" class="col-form-label">Postal Code</label>
                         <input type="text" class="form-control" id="postalCode">
@@ -37,7 +24,7 @@
                         </div>
                     </div>
                     <div class="footer-add">
-                        <button type="button" class="btn submit-button">Submit</button>
+                        <button type="button" class="btn submit-button" onclick="newAddress()">Submit</button>
                         <button type="button" class="btn cancel-button" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                         
                     </div>

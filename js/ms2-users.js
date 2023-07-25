@@ -52,7 +52,7 @@ function loginMe() {
             console.log(response);
 
             if (response.token) {
-                alert('Login Successful!')
+                
                 $('#loginModal').modal('hide');
                 document.getElementById("signUpMenu").style.visibility = "hidden"
                 document.getElementById("verticalLineMenu").style.visibility = "hidden"
@@ -88,6 +88,14 @@ function logoutMe() {
 }
 
 function logoutMeCart() {
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("profile");
+    sessionStorage.removeItem("cartID");
+    sessionStorage.removeItem("cartTotalPrice");
+    location.reload();
+}
+
+function logoutMeCheckout() {
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("profile");
     sessionStorage.removeItem("cartID");
