@@ -84,6 +84,7 @@ function logoutMe() {
     sessionStorage.removeItem("profile");
     sessionStorage.removeItem("cartID");
     sessionStorage.removeItem("cartTotalPrice");
+    sessionStorage.removeItem("checkoutID");
     location.reload();
 }
 
@@ -92,6 +93,7 @@ function logoutMeCart() {
     sessionStorage.removeItem("profile");
     sessionStorage.removeItem("cartID");
     sessionStorage.removeItem("cartTotalPrice");
+    sessionStorage.removeItem("checkoutID");
     location.reload();
 }
 
@@ -100,6 +102,7 @@ function logoutMeCheckout() {
     sessionStorage.removeItem("profile");
     sessionStorage.removeItem("cartID");
     sessionStorage.removeItem("cartTotalPrice");
+    sessionStorage.removeItem("checkoutID");
     location.reload();
 }
 
