@@ -53,7 +53,7 @@ function newAddress() {
         request.onload = function () {
             var response = request.responseText;
             console.log(response);
-            alert('Address Confirmed. Proceed to Checkout.')
+            alert('Address Received.')
             location.reload();
         }
 
@@ -155,6 +155,44 @@ function payForProduct() {
             request.send(JSON.stringify({ card_number: cardNumber, expiry_date: expiryDate, cvv: cvv, name_on_card: nameOnCard, checkoutID: checkoutID }));
         }
 
+    }
+}
 
+function getOrderHistory() {
+    
+    var token = sessionStorage.getItem('token');
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://wpm1w6eh5j.execute-api.us-east-1.amazonaws.com/order/history/' + token, true);
+    request.onload = function() {
+        history_array = JSON.parse(request.responseText);
+        console.log(history_array);
+        displayOrderHistory();
+    }
+    request.send();
+}
+
+function displayOrderHistory() {
+
+    document.getElementById('historyBody').textContent = "";
+
+    for (i = 0; i < history_array.length; i++) {
+
+        var totalPriceProduct = history_array[i].total_price_product;
+        totalPriceProduct = parseFloat(totalPriceProduct).toFixed(2);
+
+        var html = `<div class="history-items-block">
+        <div class="history-item-img-box">
+            <img src="${history_array[i].product_img}" alt="">
+        </div>
+        <h4 class="history-item-title">${history_array[i].product_title}</h4>
+        <div class="history-items-together">
+            <h5 class="history-item-price" style="padding-right: 10px;">$${history_array[i].product_price}</h5>
+            <h5 class="history-item-quantity">${history_array[i].quantity}</h5>
+            <h5 class="history-total-item-price" style="padding-right: 22px; color:#30d5c8">$${totalPriceProduct}</h5>
+            
+        </div>
+    </div>`
+        document.getElementById("historyBody").insertAdjacentHTML('beforeend', html);
     }
 }
