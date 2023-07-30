@@ -217,13 +217,23 @@
                     }
                 });
             }
+
+            // Function to show content with specified ID and hide others
+            function showContent(contentId) {
+                const contents = document.getElementsByClassName('content');
+                for (const content of contents) {
+                    content.style.display = content.id === contentId ? 'block' : 'none';
+                }
+            }
+
+           $(document).ready(function(){
+            showContent('content1')
+           })
         </script>
 
 </body>
 
 <style>
-
-    
     .history-body {
 
         display: flex;

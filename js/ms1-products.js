@@ -38,7 +38,7 @@ function displayProducts(category) {
             var cell = '<div class="card card-product" style = "max-width: 325px;">\
             <img src="'+ thumbnail + '" class="card-img-top" alt="...">\
             <div class="card-body" style="cursor:pointer" item="' + count + '" onClick="showProductDetails(this)" >\
-              <h5 class="card-title">'+ title + '</h5>\
+              <h5 class="card-title" style = " min-height: 70px; font-size: 15px;">'+ title + '</h5>\
               <div class = "ratings-section"><label class = "view-ratings">Rating:</label> <span class = "avg-rating">'+ avgRating + ' </span> <i class="fa-solid fa-star custom-front-star"></i> </div>\
               <p class="card-text" style = "color: #30d5c8">$'+ price + '</p>\
             </div>\
@@ -57,8 +57,8 @@ function displayProducts(category) {
                 }
                 var cell = '<div class="card card-product" style = "max-width: 325px;">\
                 <img src="'+ thumbnail + '" class="card-img-top" alt="...">\
-                <div class="card-body" style="cursor:pointer" item="' + count + '" onClick="showProductDetails(this)">\
-                  <h5 class="card-title">'+ title + '</h5>\
+                <div class="card-body" style="cursor:pointer" item="' + count + '" onClick="showProductDetails(this)" >\
+                  <h5 class="card-title" style = " min-height: 70px; font-size: 15px;">'+ title + '</h5>\
                   <div class = "ratings-section"><label class = "view-ratings">Rating:</label> <span class = "avg-rating">'+ avgRating + ' </span> <i class="fa-solid fa-star custom-front-star"></i> </div>\
                   <p class="card-text" style = "color: #30d5c8">$'+ price + '</p>\
                 </div>\
@@ -93,8 +93,8 @@ document.getElementById("searchInput").addEventListener("input", function (event
 
             var cell = '<div class="card card-product" style = "max-width: 325px;">\
             <img src="'+ thumbnail + '" class="card-img-top" alt="...">\
-            <div class="card-body" style="cursor:pointer" item="' + count + '" onClick="showProductDetails(this)">\
-              <h5 class="card-title">'+ title + '</h5>\
+            <div class="card-body" style="cursor:pointer" item="' + count + '" onClick="showProductDetails(this)" >\
+              <h5 class="card-title" style = " min-height: 70px; font-size: 15px;">'+ title + '</h5>\
               <div class = "ratings-section"><label class = "view-ratings">Rating:</label> <span class = "avg-rating">'+ avgRating + ' </span> <i class="fa-solid fa-star custom-front-star"></i> </div>\
               <p class="card-text" style = "color: #30d5c8">$'+ price + '</p>\
             </div>\
@@ -150,14 +150,14 @@ function listWatchProducts() {
 
 function listMenShoesProducts() {
 
-    category = "Men's Shoe";
+    category = "Men's Shoes";
     displayProducts(category);
 
 }
 
 function listWomenShoesProducts() {
 
-    category = "Women's Shoe";
+    category = "Women's Shoes";
     displayProducts(category);
 
 }

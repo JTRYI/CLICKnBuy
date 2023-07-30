@@ -24,12 +24,14 @@ function displayProductReviews(productID) {
 
     for (var i = 0; i < review_array.length; i++) {
         if (review_array[i].productID == productID) {
+            var profilePicSrc = review_array[i].profilePic == null ? 'images/avatar.png' : review_array[i].profilePic;
 
             star = "";
             var html = '<div class="text-left">                                                           \
-                      <div class="card review-card" style = "border: none">                                                                                  \
-                          <div class="card-body">                                                                         \
-                              <p class="card-text" id="rating' + i + '">' + review_array[i].review + "</p>               \
+                      <div class="card review-card" style = "border: none">                                         \
+                          <div class="card-body">   \
+                          <img src="' + profilePicSrc + '" style="width: 40px; height: 40px; border-radius: 50%;">                                \
+                                  <p class="card-text" id="rating' + i + '">' + review_array[i].review + "</p>    \
                               <small>by " + review_array[i].username + " @ " + review_array[i].timestamp + "</small>   \
                           </div>                                                                                          \
                       </div>                                                                                              \
@@ -63,6 +65,16 @@ function displayProductReviews(productID) {
 
         }
 
+    }
+    // Show or hide the circular progress indicator based on the number of reviews displayed
+    var totalReviews = review_array.filter((review) => review.productID == productID).length;
+    var displayedReviews = document.querySelectorAll(".review-card").length;
+    var circularProgress = document.getElementById("circularProgress");
+
+    if (displayedReviews < totalReviews) {
+        circularProgress.style.display = "block"; // Show the progress indicator
+    } else {
+        circularProgress.style.display = "none"; // Hide the progress indicator
     }
 }
 
@@ -160,15 +172,19 @@ function displayColorStar(classname, num) {
 function addReview() {
 
     var token = sessionStorage.getItem('token');
+    var profile = JSON.parse(sessionStorage.getItem('profile'));
+    profilePic = profile[0].profile_pic;
     productID = getQueryParam('id');
 
     var review = new Object();
 
+    review.profilePic = profilePic;
     review.username = document.getElementById("addReviewUsername").value; // Value from HTML input text
     review.review = document.getElementById("userReview").value; // Value from HTML input text
     review.review_rating = rating;
     review.token = token;
     review.productID = productID;
+
 
     if (review.review == '') {
         alert('Please enter a review.')
@@ -206,16 +222,16 @@ function updateReview() {
     var response = confirm("Are you sure you want to update this review?");
     if (response == true) {
 
-       
+
         reviewID = review_array[currentIndex]._id;
 
         var updateReview = new XMLHttpRequest(); // new HttpRequest instance to send request to server
 
         updateReview.open('PUT', 'https://wpm1w6eh5j.execute-api.us-east-1.amazonaws.com/reviews/update/' + reviewID, true); //The HTTP method called 'PUT' is used here as we are updating data
-       
+
         review_array[currentIndex].review_rating = rating;
         updateReview.onload = function () {
-            
+
             location.reload()
         };
 
@@ -237,9 +253,9 @@ function deleteReview(element) {
 
         var eraseReview = new XMLHttpRequest();
         eraseReview.open("DELETE", 'https://wpm1w6eh5j.execute-api.us-east-1.amazonaws.com/reviews/delete/' + reviewID, true);
-        
+
         eraseReview.onload = function () {
-            
+
             location.reload()
         };
 

@@ -557,3 +557,74 @@ body {
 .custom-front-star {
     color: #30d5c8;
 }
+
+/* CSS for Home Page Footer */
+
+footer{
+    background-color: black;
+    margin-top: 5%;
+    padding-top: 30px;
+    
+    height: auto;
+    width: 100vw;
+    color: white;
+}
+
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 3rem;
+}
+
+.footer-content p{
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.footer-socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+
+}
+
+.footer-socials li{
+    margin: 0 10px;
+}
+
+.footer-socials a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer-socials a i {
+    font-size: 1.1rem;
+    transition: color .4s ease;
+}
+
+.footer-socials a i:hover {
+    color: #30d5c8;
+}
+
+.footer-bottom{
+    text-align: center;
+    padding: 5px 0;
+}
+
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 1px;
+}
+
+
