@@ -107,23 +107,37 @@ document.getElementById("searchInput").addEventListener("input", function (event
 function listAllProducts() {
     category = '';
     displayProducts(category);
+    resetNavColors();
+    const allCategories = document.getElementById('allCategories');
+    allCategories.style.color = "#30d5c8";
+    
 }
 
 function listGamingProducts() {
     category = "Gaming";
     displayProducts(category);
+    resetNavColors();
+    const gamingProducts = document.getElementById('gamingProducts');
+    gamingProducts.style.color = "#30d5c8";
+    
 }
 
 function listMenFashionProducts() {
 
     category = "Men's Fashion";
     displayProducts(category);
+    resetNavColors();
+    const mensFashion = document.getElementById('mensFashionProducts');
+    mensFashion.style.color = "#30d5c8";
 }
 
 function listWomenFashionProducts() {
 
     category = "Women's Fashion";
     displayProducts(category);
+    resetNavColors();
+    const womensFashion = document.getElementById('womensFashionProducts');
+    womensFashion.style.color = "#30d5c8";
 
 }
 
@@ -131,6 +145,9 @@ function listKidsFashionProducts() {
 
     category = "Kid's Fashion";
     displayProducts(category);
+    resetNavColors();
+    const kidsFashion = document.getElementById('kidsFashionProducts');
+    kidsFashion.style.color = "#30d5c8";
 
 }
 
@@ -138,6 +155,9 @@ function listMobileGadgetsProducts() {
 
     category = "Mobile & Gadgets";
     displayProducts(category);
+    resetNavColors();
+    const mobileProducts = document.getElementById('mobileProducts');
+    mobileProducts.style.color = "#30d5c8";
 
 }
 
@@ -145,6 +165,9 @@ function listWatchProducts() {
 
     category = "Watches"
     displayProducts(category);
+    resetNavColors();
+    const watchProducts = document.getElementById('watchProducts');
+    watchProducts.style.color = "#30d5c8";
 
 }
 
@@ -152,6 +175,9 @@ function listMenShoesProducts() {
 
     category = "Men's Shoes";
     displayProducts(category);
+    resetNavColors();
+    const mensShoes = document.getElementById('mensShoesProducts');
+    mensShoes.style.color = "#30d5c8";
 
 }
 
@@ -159,6 +185,9 @@ function listWomenShoesProducts() {
 
     category = "Women's Shoes";
     displayProducts(category);
+    resetNavColors();
+    const womensShoes = document.getElementById('womensShoesProducts');
+    womensShoes.style.color = "#30d5c8";
 
 }
 
@@ -166,7 +195,17 @@ function listTravelProducts() {
 
     category = "Travel";
     displayProducts(category);
+    resetNavColors();
+    const travelProducts = document.getElementById('travelProducts');
+    travelProducts.style.color = "#30d5c8";
 
+}
+
+function resetNavColors() {
+    const navItems = document.getElementsByClassName('nav-link');
+    for (let i = 0; i < navItems.length; i++) {
+        navItems[i].style.color = "black";
+    }
 }
 
 function goToPageWithProductID(id) {

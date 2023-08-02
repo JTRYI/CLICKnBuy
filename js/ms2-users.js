@@ -47,7 +47,7 @@ function loginMe() {
         var loginUser = new XMLHttpRequest();
         loginUser.open("POST", "https://wpm1w6eh5j.execute-api.us-east-1.amazonaws.com/login", true);
         loginUser.onload = function () {
-
+            
             var response = JSON.parse(loginUser.responseText);
             console.log(response);
 
