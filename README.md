@@ -4,7 +4,7 @@ TP Year 2 Sem 1 Project
 
 E-Commerce Website built using HTML, CSS, Bootstrap, JS and AWS Services for CADV Module
 
-# AWS Services Used:
+# AWS Services Used
   - AWS RDS with MySQL as the Database Engine
   - AWS Lambda
   - AWS API Gateway
